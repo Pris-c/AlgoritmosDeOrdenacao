@@ -1,89 +1,91 @@
 public class QuickSort extends Sorter {
 
     public int[] sort(int[] list){
+        int[] orderedList = list;
 
         boolean ordenado = false;
 
 
         while (!ordenado) {
-            int posP = novoPivo(list);
-            int pivo = list[posP];
+            int posP = novoPivo(orderedList);
+            int pivo = orderedList[posP];
 
             boolean posCorreta = false;
 
             while (!posCorreta) {
                 posCorreta = true;
 
-                for (int i = list.length - 1; i > posP; i--) {
-                    if (list[i] < pivo) {
+                for (int i = orderedList.length - 1; i > posP; i--) {
+                    if (orderedList[i] < pivo) {
                         posCorreta=false;
-                        list[posP] = list[i];
-                        list[i] = pivo;
+                        orderedList[posP] = orderedList[i];
+                        orderedList[i] = pivo;
                         posP = i;
                         break;
                     }
                 }
 
                 for (int j = 0; j < posP; j++) {
-                    if (list[j] > pivo) {
+                    if (orderedList[j] > pivo) {
                         posCorreta=false;
-                        list[posP] = list[j];
-                        list[j] = pivo;
+                        orderedList[posP] = orderedList[j];
+                        orderedList[j] = pivo;
                         posP = j;
                         break;
                     }
                 }
             }
-            ordenado = super.verifyOrdenation(list);
+            ordenado = super.verifyOrdenation(orderedList);
         }
-        return list;
+        return orderedList;
     }
 
     public void sortShowing(int[] list){
+        int[] orderedList = list;
         System.out.println("---QUICK SORT---");
         System.out.print("Entrada: \t");
-        super.printList(list);
+        super.printList(orderedList);
 
         boolean ordenado = false;
 
 
         while (!ordenado) {
-            int posP = novoPivo(list);
-            int pivo = list[posP];
+            int posP = novoPivo(orderedList);
+            int pivo = orderedList[posP];
 
             boolean posCorreta = false;
 
             while (!posCorreta) {
                 posCorreta = true;
 
-                for (int i = list.length - 1; i > posP; i--) {
-                    if (list[i] < pivo) {
+                for (int i = orderedList.length - 1; i > posP; i--) {
+                    if (orderedList[i] < pivo) {
                         posCorreta=false;
-                        list[posP] = list[i];
-                        list[i] = pivo;
+                        orderedList[posP] = orderedList[i];
+                        orderedList[i] = pivo;
                         posP = i;
                         System.out.print("\t\t\t");
-                        super.printList(list);
+                        super.printList(orderedList);
                         break;
                     }
                 }
 
                 for (int j = 0; j < posP; j++) {
-                    if (list[j] > pivo) {
+                    if (orderedList[j] > pivo) {
                         posCorreta=false;
-                        list[posP] = list[j];
-                        list[j] = pivo;
+                        orderedList[posP] = orderedList[j];
+                        orderedList[j] = pivo;
                         posP = j;
                         System.out.print("\t\t\t");
-                        super.printList(list);
+                        super.printList(orderedList);
                         break;
                     }
                 }
             }
-            ordenado = super.verifyOrdenation(list);
+            ordenado = super.verifyOrdenation(orderedList);
         }
         System.out.print("Saída: \t\t");
-        super.printList(list);
+        super.printList(orderedList);
     }
 
     private int novoPivo(int[] list) {

@@ -1,15 +1,16 @@
 public class SelectionSort extends Sorter{
 
     public int[] sort(int[] list){
-        for (int i = 0; i < list.length-1; i++) {
+        int[] orderedList = list;
+        for (int i = 0; i < orderedList.length-1; i++) {
             int position = 0;
-            int a = list[i];
+            int a = orderedList[i];
             int menor = Integer.MAX_VALUE;
 
 
-            for (int j = i+1; j < list.length; j++) {
+            for (int j = i+1; j < orderedList.length; j++) {
 
-                int b = list[j];
+                int b = orderedList[j];
                 if (b < menor) {
                     menor = b;
                     position = j;
@@ -17,30 +18,31 @@ public class SelectionSort extends Sorter{
             }
 
             if (menor < a){
-                list[i] = menor;
-                list[position] = a;
+                orderedList[i] = menor;
+                orderedList[position] = a;
             }
 
         }
-        return list;
+        return orderedList;
     }
 
     public void sortShowing(int[] list){
+        int[] orderedList = list;
         System.out.println("---SELECTION SORT---");
         System.out.print("Entrada: \t");
-        super.printList(list);
+        super.printList(orderedList);
 
-        for (int i = 0; i < list.length-1; i++) {
+        for (int i = 0; i < orderedList.length-1; i++) {
             System.out.print("\t\t\t");
-            super.printList(list);
+            super.printList(orderedList);
 
             int position = 0;
-            int a = list[i];
+            int a = orderedList[i];
             int menor = Integer.MAX_VALUE;
 
-            for (int j = i+1; j < list.length; j++) {
+            for (int j = i+1; j < orderedList.length; j++) {
 
-                int b = list[j];
+                int b = orderedList[j];
                 if (b < menor) {
                     menor = b;
                     position = j;
@@ -48,13 +50,13 @@ public class SelectionSort extends Sorter{
             }
 
             if (menor < a){
-                list[i] = menor;
-                list[position] = a;
+                orderedList[i] = menor;
+                orderedList[position] = a;
             }
 
         }
         System.out.print("Saída: \t\t");
-        super.printList(list);
+        super.printList(orderedList);
     }
 
 

@@ -9,15 +9,10 @@ public class TesteOrdenacao {
         Sorter quick = new QuickSort();
         Sorter selection = new SelectionSort();
 
-        bubble.sortShowing(e1);
-
-
-
-
-      /*  SortList.imprimirLista(SortList.bubbleSort(e1));
-        SortList.imprimirLista(SortList.selectionSort(e2));
-        SortList.imprimirLista(SortList.insertionSort(e3));
-        SortList.imprimirLista(SortList.quickSortSteps(e4));*/
+        //bubble.sortShowing(e1);
+        //insertion.sortShowing(e1);
+        //quick.sortShowing(e1);
+        selection.sortShowing(e1);
     }
 
 }
