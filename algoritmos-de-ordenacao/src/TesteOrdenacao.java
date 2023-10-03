@@ -12,7 +12,7 @@ public class TesteOrdenacao {
         //bubble.sortShowing(e1);
         //insertion.sortShowing(e1);
         //quick.sortShowing(e1);
-        selection.sortShowing(e1);
+        //selection.sortShowing(e1);
     }
 
 }
